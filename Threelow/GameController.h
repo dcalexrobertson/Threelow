@@ -17,4 +17,6 @@
 
 -(void)holdDie:(Dice *)dieToHold;
 
+-(void)resetDice;
+
 @end

@@ -30,7 +30,7 @@ int main(int argc, const char * argv[]) {
         
         while (true) {
             
-            NSString *input = [inputCollector inputForPrompt:@"\n What do you want to do?\n roll - Roll the Dice\n quit - Quit Program"];
+            NSString *input = [inputCollector inputForPrompt:@"\n What do you want to do?\n roll - Roll the Dice\n quit - Quit Program\n reset - Rest Game"];
             
             if ([input isEqualToString:@"roll"]) {
                 
@@ -41,13 +41,13 @@ int main(int argc, const char * argv[]) {
                 
                 if ([game.heldDice count] >= 1) {
                     
-                    NSLog(@"(remember you are holding: %@", game.heldDice);
+                    NSLog(@"You are holding: %@", game.heldDice);
                     
                 }
                 
                 while (true) {
                     
-                    NSString *dieToHold = [inputCollector inputForPrompt:@"Please enter the number for any die you would like to hold. When you are finished, type 'next'."];
+                    NSString *dieToHold = [inputCollector inputForPrompt:@"Please enter the number for any die you would like to hold or unhold. When you are finished, type 'next'."];
                     
                     if ([dieToHold isEqualToString:@"1"]) {
                         
@@ -71,7 +71,6 @@ int main(int argc, const char * argv[]) {
     
                     } else if ([dieToHold isEqualToString:@"next"]) {
                         
-                        NSLog(@"You are now holding %@", game.heldDice);
                         break;
                         
                     } else {
@@ -82,6 +81,9 @@ int main(int argc, const char * argv[]) {
                     
                 }
                 
+            } else if ([input isEqualToString:@"reset"]) {
+                
+                [game resetDice];
                 
             } else if ([input isEqualToString:@"quit"]) {
                 
