@@ -30,7 +30,7 @@
 
 -(NSString *)description
 {
-    return [NSString stringWithFormat:@"%@", self.name];
+    return [NSString stringWithFormat:@"%@ (showing %lu)", self.name, (unsigned long)self.currentValue];
 }
 
 

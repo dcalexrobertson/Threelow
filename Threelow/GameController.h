@@ -8,9 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+@class Dice;
+
 @interface GameController : NSObject
 
-@property (nonatomic) NSArray *arrayOfDice;
+@property (nonatomic) NSMutableArray *arrayOfDice;
 @property (nonatomic) NSMutableArray *heldDice;
+
+-(void)holdDie:(Dice *)dieToHold;
 
 @end

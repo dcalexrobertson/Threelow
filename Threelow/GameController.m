@@ -7,8 +7,16 @@
 //
 
 #import "GameController.h"
+#import "Dice.h"
 
 @implementation GameController
 
+-(void)holdDie:(Dice *)dieToHold
+{
+    
+    [self.arrayOfDice removeObject:dieToHold];
+    [self.heldDice addObject:dieToHold];
+    
+}
 
 @end

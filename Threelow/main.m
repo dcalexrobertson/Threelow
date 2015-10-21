@@ -23,7 +23,8 @@ int main(int argc, const char * argv[]) {
         
         GameController *game = [[GameController alloc] init];
         
-        game.arrayOfDice = @[dice1, dice2, dice3, dice4, dice5];
+        game.arrayOfDice = [@[dice1, dice2, dice3, dice4, dice5] mutableCopy];
+        game.heldDice = [@[] mutableCopy];
         
         InputCollector *inputCollector = [[InputCollector alloc] init];
         
@@ -33,10 +34,54 @@ int main(int argc, const char * argv[]) {
             
             if ([input isEqualToString:@"roll"]) {
                 
-                for (Dice *dye in game.arrayOfDice) {
-                    [dye randomizeValue];
-                    NSLog(@"%@ is showing %lu", dye, dye.currentValue);
+                for (Dice *die in game.arrayOfDice) {
+                    [die randomizeValue];
+                    NSLog(@"%@", die);
                 }
+                
+                if ([game.heldDice count] >= 1) {
+                    
+                    NSLog(@"(remember you are holding: %@", game.heldDice);
+                    
+                }
+                
+                while (true) {
+                    
+                    NSString *dieToHold = [inputCollector inputForPrompt:@"Please enter the number for any die you would like to hold. When you are finished, type 'next'."];
+                    
+                    if ([dieToHold isEqualToString:@"1"]) {
+                        
+                        [game holdDie:dice1];
+                        
+                    } else if ([dieToHold isEqualToString:@"2"]) {
+                        
+                        [game holdDie:dice2];
+    
+                    } else if ([dieToHold isEqualToString:@"3"]) {
+                        
+                        [game holdDie:dice3];
+    
+                    } else if ([dieToHold isEqualToString:@"4"]) {
+                        
+                        [game holdDie:dice4];
+    
+                    } else if ([dieToHold isEqualToString:@"5"]) {
+                        
+                        [game holdDie:dice5];
+    
+                    } else if ([dieToHold isEqualToString:@"next"]) {
+                        
+                        NSLog(@"You are now holding %@", game.heldDice);
+                        break;
+                        
+                    } else {
+                        
+                        NSLog(@"That is not a valid input.");
+                        
+                    }
+                    
+                }
+                
                 
             } else if ([input isEqualToString:@"quit"]) {
                 
