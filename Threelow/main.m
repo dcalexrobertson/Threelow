@@ -30,20 +30,11 @@ int main(int argc, const char * argv[]) {
         
         while (true) {
             
-            NSString *input = [inputCollector inputForPrompt:@"\n What do you want to do?\n roll - Roll the Dice\n quit - Quit Program\n reset - Rest Game"];
+            NSString *input = [inputCollector inputForPrompt:@"\n What do you want to do?\n roll - Roll the Dice\n quit - Quit Program\n reset - Reset Game"];
             
             if ([input isEqualToString:@"roll"]) {
                 
-                for (Dice *die in game.arrayOfDice) {
-                    [die randomizeValue];
-                    NSLog(@"%@", die);
-                }
-                
-                if ([game.heldDice count] >= 1) {
-                    
-                    NSLog(@"You are holding: %@\n Score: %lu", game.heldDice, (unsigned long)[game calculateScore]);
-                    
-                }
+                [game rollDice];
                 
                 while (true) {
                     
@@ -71,7 +62,15 @@ int main(int argc, const char * argv[]) {
     
                     } else if ([dieToHold isEqualToString:@"next"]) {
                         
-                        break;
+                        if (game.numberOfRolls > [game.heldDice count]) {
+                            
+                            NSLog(@"You need to hold at least %lu dice.", (unsigned long)game.numberOfRolls);
+                            
+                        } else {
+                            
+                            break;
+                            
+                        }
                         
                     } else {
                         

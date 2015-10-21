@@ -11,6 +11,41 @@
 
 @implementation GameController
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _numberOfRolls = 0;
+        _score = 0;
+    }
+    return self;
+}
+
+-(void)rollDice
+{
+    for (Dice *die in self.arrayOfDice) {
+        [die randomizeValue];
+        NSLog(@"%@", die);
+    }
+    
+    if ([self.heldDice count] >= 1) {
+        
+        NSLog(@"\nYou are holding: %@\n Score: %lu", self.heldDice, (unsigned long)[self calculateScore]);
+        
+    } else {
+        
+        NSLog(@"\n Score: %lu", (unsigned long)[self calculateScore]);
+        
+    }
+    
+    self.numberOfRolls++;
+    
+    NSUInteger rollsLeft = 5 - self.numberOfRolls;
+    
+    NSLog(@"You have %lu roll(s) left.", (unsigned long)rollsLeft);
+    
+}
+
 -(void)holdDie:(Dice *)dieToHold
 {
     
@@ -18,16 +53,14 @@
         
         [self.heldDice removeObject:dieToHold];
         [self.arrayOfDice addObject:dieToHold];
-        NSLog(@"You are no longer holding %@", dieToHold);
+        NSLog(@"\nYou are no longer holding %@", dieToHold);
         
     } else {
         
         [self.arrayOfDice removeObject:dieToHold];
         [self.heldDice addObject:dieToHold];
-        NSLog(@"You are now holding %@", self.heldDice);
-        
+        NSLog(@"\nYou are now holding %@. Score: %lu", self.heldDice, (unsigned long)[self calculateScore]);
     }
-    
 }
 
 -(void)resetDice
