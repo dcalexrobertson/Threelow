@@ -41,7 +41,7 @@ int main(int argc, const char * argv[]) {
                 
                 if ([game.heldDice count] >= 1) {
                     
-                    NSLog(@"You are holding: %@", game.heldDice);
+                    NSLog(@"You are holding: %@\n Score: %lu", game.heldDice, (unsigned long)[game calculateScore]);
                     
                 }
                 

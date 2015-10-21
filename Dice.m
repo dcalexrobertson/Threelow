@@ -24,13 +24,23 @@
 -(void)randomizeValue
 {
     
-    self.currentValue = 1 + arc4random_uniform(6);
+    self.showing = 1 + arc4random_uniform(6);
+    
+    if (self.showing == 3) {
+        
+        self.currentValue = 0;
+        
+    } else {
+        
+        self.currentValue = self.showing;
+        
+    }
     
 }
 
 -(NSString *)description
 {
-    return [NSString stringWithFormat:@"%@ (showing %lu)", self.name, (unsigned long)self.currentValue];
+    return [NSString stringWithFormat:@"%@ (showing %lu)", self.name, (unsigned long)self.showing];
 }
 
 

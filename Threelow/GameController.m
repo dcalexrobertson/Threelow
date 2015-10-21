@@ -49,5 +49,20 @@
     
 }
 
+-(NSUInteger)calculateScore
+{
+    
+    NSUInteger score = 0;
+    
+    for (Dice *die in self.heldDice) {
+        
+        score += die.currentValue;
+        
+    }
+    
+    return score;
+}
+
+
 
 @end

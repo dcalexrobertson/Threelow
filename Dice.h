@@ -12,6 +12,7 @@
 
 @property (nonatomic) NSString * name;
 @property (nonatomic) NSUInteger currentValue;
+@property (nonatomic) NSUInteger showing;
 
 -(instancetype)initWithName:(NSString *)name;
 

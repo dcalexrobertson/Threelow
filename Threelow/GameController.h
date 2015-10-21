@@ -14,9 +14,12 @@
 
 @property (nonatomic) NSMutableArray *arrayOfDice;
 @property (nonatomic) NSMutableArray *heldDice;
+@property (nonatomic) NSUInteger score;
 
 -(void)holdDie:(Dice *)dieToHold;
 
 -(void)resetDice;
+
+-(NSUInteger)calculateScore;
 
 @end
