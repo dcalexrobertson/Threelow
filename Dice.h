@@ -13,5 +13,6 @@
 @property (nonatomic) NSUInteger currentValue;
 
 -(void)randomizeValue;
+-(void)roll;
 
 @end

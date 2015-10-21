@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		FA78779E1BD8041800BE9167 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA78779D1BD8041800BE9167 /* main.m */; };
 		FA7877A61BD804B800BE9167 /* Dice.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7877A51BD804B800BE9167 /* Dice.m */; settings = {ASSET_TAGS = (); }; };
+		FA7877A91BD808A100BE9167 /* InputCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7877A81BD808A100BE9167 /* InputCollector.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,8 @@
 		FA78779D1BD8041800BE9167 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FA7877A41BD804B800BE9167 /* Dice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Dice.h; path = ../Dice.h; sourceTree = "<group>"; };
 		FA7877A51BD804B800BE9167 /* Dice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Dice.m; path = ../Dice.m; sourceTree = "<group>"; };
+		FA7877A71BD808A100BE9167 /* InputCollector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputCollector.h; sourceTree = "<group>"; };
+		FA7877A81BD808A100BE9167 /* InputCollector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputCollector.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +66,8 @@
 				FA78779D1BD8041800BE9167 /* main.m */,
 				FA7877A41BD804B800BE9167 /* Dice.h */,
 				FA7877A51BD804B800BE9167 /* Dice.m */,
+				FA7877A71BD808A100BE9167 /* InputCollector.h */,
+				FA7877A81BD808A100BE9167 /* InputCollector.m */,
 			);
 			path = Threelow;
 			sourceTree = "<group>";
@@ -123,6 +128,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA7877A91BD808A100BE9167 /* InputCollector.m in Sources */,
 				FA7877A61BD804B800BE9167 /* Dice.m in Sources */,
 				FA78779E1BD8041800BE9167 /* main.m in Sources */,
 			);
