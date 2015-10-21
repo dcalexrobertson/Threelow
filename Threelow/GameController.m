@@ -16,7 +16,6 @@
     self = [super init];
     if (self) {
         _numberOfRolls = 0;
-        _score = 0;
     }
     return self;
 }
@@ -77,6 +76,8 @@
         [self.heldDice removeAllObjects];
         
     }
+    
+    self.numberOfRolls = 0;
     
     NSLog(@"You are no longer holding any dice. You can start again.");
     

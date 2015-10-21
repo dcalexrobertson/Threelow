@@ -14,8 +14,8 @@
 
 @property (nonatomic) NSMutableArray *arrayOfDice;
 @property (nonatomic) NSMutableArray *heldDice;
-@property (nonatomic) NSUInteger score;
 @property (nonatomic) NSUInteger numberOfRolls;
+@property (nonatomic) NSUInteger bestScore;
 
 -(void)rollDice;
 

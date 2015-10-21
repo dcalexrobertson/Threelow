@@ -30,6 +30,46 @@ int main(int argc, const char * argv[]) {
         
         while (true) {
             
+            if (game.numberOfRolls >= 5) {
+                
+                NSLog(@"\nYou have run out of rolls. You have a score of %lu.", (unsigned long)[game calculateScore]);
+                
+                if (!game.bestScore) {
+                    
+                    NSLog(@"The new best score is %lu. Let's see if you can beat it!", (unsigned long)[game calculateScore]);
+                    game.bestScore = [game calculateScore];
+                    
+                } else if (game.bestScore <= [game calculateScore]) {
+                    
+                    NSLog(@"The best score is still %lu. Let's see if you can beat it!", (unsigned long)game.bestScore);
+                    
+                } else if (game.bestScore > [game calculateScore]) {
+                    
+                    NSLog(@"Congrats! You've got the new best score!");
+                    game.bestScore = [game calculateScore];
+                    
+                }
+                
+                
+                NSString *input = [inputCollector inputForPrompt:@"\nWhat do you want to do?\n play - Play Again\n quit - Quit/"];
+                
+                if ([input isEqualToString:@"play"]) {
+                    
+                    [game resetDice];
+                
+                } else if ([input isEqualToString:@"quit"]) {
+                    
+                    NSLog(@"Thanks for playing.");
+                    break;
+                    
+                } else {
+                    
+                    NSLog(@"That is not a valid input");
+                    
+                }
+                
+            }
+            
             NSString *input = [inputCollector inputForPrompt:@"\n What do you want to do?\n roll - Roll the Dice\n quit - Quit Program\n reset - Reset Game"];
             
             if ([input isEqualToString:@"roll"]) {
