@@ -9,16 +9,21 @@
 #import <Foundation/Foundation.h>
 #import "Dice.h"
 #import "InputCollector.h"
+#import "GameController.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
         
-        Dice *dice1 = [[Dice alloc] init];
-        Dice *dice2 = [[Dice alloc] init];
-        Dice *dice3 = [[Dice alloc] init];
-        Dice *dice4 = [[Dice alloc] init];
-        Dice *dice5 = [[Dice alloc] init];
+        Dice *dice1 = [[Dice alloc] initWithName:@"Dice #1"];
+        Dice *dice2 = [[Dice alloc] initWithName:@"Dice #2"];
+        Dice *dice3 = [[Dice alloc] initWithName:@"Dice #3"];
+        Dice *dice4 = [[Dice alloc] initWithName:@"Dice #4"];
+        Dice *dice5 = [[Dice alloc] initWithName:@"Dice #5"];
+        
+        GameController *game = [[GameController alloc] init];
+        
+        game.arrayOfDice = @[dice1, dice2, dice3, dice4, dice5];
         
         InputCollector *inputCollector = [[InputCollector alloc] init];
         
@@ -28,20 +33,10 @@ int main(int argc, const char * argv[]) {
             
             if ([input isEqualToString:@"roll"]) {
                 
-                [dice1 randomizeValue];
-                NSLog(@"dice1 = %lu", (unsigned long)dice1.currentValue);
-                
-                [dice2 randomizeValue];
-                NSLog(@"dice2 = %lu", (unsigned long)dice2.currentValue);
-                
-                [dice3 randomizeValue];
-                NSLog(@"dice3 = %lu", (unsigned long)dice3.currentValue);
-                
-                [dice4 randomizeValue];
-                NSLog(@"dice4 = %lu", (unsigned long)dice4.currentValue);
-                
-                [dice5 randomizeValue];
-                NSLog(@"dice5 = %lu", (unsigned long)dice5.currentValue);
+                for (Dice *dye in game.arrayOfDice) {
+                    [dye randomizeValue];
+                    NSLog(@"%@ is showing %lu", dye, dye.currentValue);
+                }
                 
             } else if ([input isEqualToString:@"quit"]) {
                 

@@ -10,6 +10,7 @@
 		FA78779E1BD8041800BE9167 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA78779D1BD8041800BE9167 /* main.m */; };
 		FA7877A61BD804B800BE9167 /* Dice.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7877A51BD804B800BE9167 /* Dice.m */; settings = {ASSET_TAGS = (); }; };
 		FA7877A91BD808A100BE9167 /* InputCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7877A81BD808A100BE9167 /* InputCollector.m */; settings = {ASSET_TAGS = (); }; };
+		FA7877AC1BD80F8100BE9167 /* GameController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7877AB1BD80F8100BE9167 /* GameController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +32,8 @@
 		FA7877A51BD804B800BE9167 /* Dice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Dice.m; path = ../Dice.m; sourceTree = "<group>"; };
 		FA7877A71BD808A100BE9167 /* InputCollector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputCollector.h; sourceTree = "<group>"; };
 		FA7877A81BD808A100BE9167 /* InputCollector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputCollector.m; sourceTree = "<group>"; };
+		FA7877AA1BD80F8100BE9167 /* GameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameController.h; sourceTree = "<group>"; };
+		FA7877AB1BD80F8100BE9167 /* GameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +67,8 @@
 			isa = PBXGroup;
 			children = (
 				FA78779D1BD8041800BE9167 /* main.m */,
+				FA7877AA1BD80F8100BE9167 /* GameController.h */,
+				FA7877AB1BD80F8100BE9167 /* GameController.m */,
 				FA7877A41BD804B800BE9167 /* Dice.h */,
 				FA7877A51BD804B800BE9167 /* Dice.m */,
 				FA7877A71BD808A100BE9167 /* InputCollector.h */,
@@ -129,6 +134,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA7877A91BD808A100BE9167 /* InputCollector.m in Sources */,
+				FA7877AC1BD80F8100BE9167 /* GameController.m in Sources */,
 				FA7877A61BD804B800BE9167 /* Dice.m in Sources */,
 				FA78779E1BD8041800BE9167 /* main.m in Sources */,
 			);

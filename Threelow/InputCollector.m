@@ -12,7 +12,7 @@
 
 -(NSString *)inputForPrompt:(NSString *)promptString
 {
-    NSLog(promptString);
+    NSLog(@"%@", promptString);
     
     char inputChars[255];
     fgets(inputChars, 255, stdin);
